@@ -9,6 +9,16 @@ class PagesController extends Controller
     //
     public function index()
     {
+        /*
+        $title = 'Welcome to Laravel!';
+        return view('pages/index', compact('title'));
+        return view('pages/index')->with('title', $title);
+
+        $data = array(
+            'title' => $title,
+            'services' => ['Web Design', 'Programming', 'SEO']
+        );
+        */
         return view('pages/index');
     }
 
@@ -19,6 +29,11 @@ class PagesController extends Controller
 
     public function services()
     {
-        return view('pages/services');
+        $title = 'Services';
+        $data = array(
+            'title' => $title,
+            'services' => ['Web Design', 'Programming', 'SEO']
+        );
+        return view('pages/services')->with($data);
     }
 }
